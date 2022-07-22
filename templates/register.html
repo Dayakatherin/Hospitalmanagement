@@ -1,0 +1,136 @@
+{% comment %} {% block content %}
+  <div class="container jumbotron">
+      <form method="POST" action="">
+          {% csrf_token %}
+           {{form}}
+          <input class="btn btn-success" type="submit" value="Login">
+          <p>Already have an account<a href='{% url 'patient_login' %}'>Login</a></p>
+      </form>
+  </div>
+  {% endblock %} {% endcomment %}
+
+  {% comment %} {% block content %}
+<div class="box">
+<form action="" method="post">
+  {% csrf_token %}
+  <h1>REGISTRATION FORM</h1>
+{{form}}
+<input class="btn btn-success" type="submit" value="Login">
+<p>Already have an account<a href='{% url 'patient_login' %}'>Login</a></p>
+
+
+</form> 
+</div> 
+{% endblock %} 
+<style>
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    background:#3498db;
+    margin: 0 auto 0 auto;  
+    width:100%; 
+    text-align:center;
+    margin: 20px 0px 20px 0px;   
+  }
+  form
+  {
+    padding:10px;
+    
+    display:flex;
+    flex-direction:column;
+
+  }
+  
+  h1{
+    font-size:1.5em;
+    color:blue;
+  }
+  
+  .box{
+    background:white;
+    width:300px;
+    height:380px;
+    border-radius:6px;
+    margin: 0 auto 0 auto;
+    padding:1px 0px 70px 0px;
+    border: #2980b9 4px solid;
+  
+   
+  }
+  
+  
+  
+  
+  .btn{
+    background:#2ecc71;
+    width:145px;
+    padding-top:5px;
+    padding-bottom:5px;
+    color:white;
+    border-radius:4px;
+    border: #27ae60 1px solid;
+    
+    margin-top:20px;
+    margin-bottom:20px;
+    float:left;
+    margin-left:60px;
+    font-weight:800;
+    font-size:0.8em;
+  }
+  
+  .btn:hover{
+    background:#2CC06B; 
+  }
+  
+
+
+</style>  {% endcomment %}
+
+
+
+
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <meta name="copyright" content="MACode ID, https://macodeid.com/">
+
+  <title>One Health - Medical Center HTML5 Template</title>
+
+  <link rel="stylesheet" href= "{% static '../static/css/maicons.css' %}">
+
+  <link rel="stylesheet" href="{% static '../static/css/bootstrap.css' %}">
+
+  <link rel="stylesheet" href="{% static '../static/vendor/owl-carousel/css/owl.carousel.css' %}">
+
+  <link rel="stylesheet" href="{% static '../static/vendor/animate/animate.css' %}">
+
+  <link rel="stylesheet" href="{% static '../static/css/register.css' %}"> 
+</head>
+<body>
+  {% block content %}
+  <form method="POST" action="">
+    {% csrf_token %}
+  <div class="box">
+    <h1 class="text-center wow fadeInUp">REGISTRATION FORM</h1>
+    <form>
+        <p>{{form}}</p>
+       
+    </form>
+    <button type="submit" class="btn btn-primary mt-3 wow zoomIn">REGISTER</button>
+    <br>
+    <br></br><h2>Already have an account     ?     <a href='{% url 'patient_login' %}'>Login</a></h2>
+  </div
+  </form>
+    
+  {% endblock %}
+
+
+
+  
